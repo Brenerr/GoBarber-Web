@@ -1,11 +1,19 @@
 import React from 'react';
 import GlobalStyle from './styles/global';
 import SignIn from './pages/SignIn';
+// eslint-disable-next-line
 import SignUp from './pages/SignUp';
+import { AuthProvider } from './hooks/AuthContext';
+import ToastContainer from './components/ToastContainer';
 
 const App: React.FC = () => (
   <>
-    <SignIn />
+    <AuthProvider>
+      <SignIn />
+    </AuthProvider>
+
+    <ToastContainer />
+
     <GlobalStyle />
   </>
 );
